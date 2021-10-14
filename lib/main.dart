@@ -10,16 +10,31 @@ class _PerguntaAppState extends State<PerguntaApp>{
   var _perguntaSelecionada = 0;
   final _perguntas = const [
     {
-      'texto' : 'Qual sua cor favorita?',
-      'respostas' : ['Azul', 'Vermelho', 'Verde', 'Amarelo'],
+      'texto' : 'Qual destas cores é sua favorita?',
+      'respostas' : [
+        {'texto': 'Azul', 'nota': '10'}, 
+        {'texto': 'Vermelho', 'nota': '10'},
+        {'texto': 'Verde', 'nota': '10'},
+        {'texto': 'Amarelo', 'nota': '10'},
+      ],
     },
     {
-      'texto' : 'Qual seu animal favorito?',
-      'respostas' : ['Elefante', 'Coelho', 'Leão', 'Tubarão'],
+      'texto' : 'Qual destes animais é seu favorito?',
+      'respostas' : [
+        {'texto': 'Elefante', 'nota': '10'}, 
+        {'texto': 'Macaco', 'nota': '10'},
+        {'texto': 'Tubarão', 'nota': '10'},
+        {'texto': 'Pelicano', 'nota': '10'},
+      ],
     },
     {
-      'texto' : 'Qual seu time do coração?',
-      'respostas' : ['Botafogo', 'Vasco', 'Fluminense', 'Flamengo'],
+      'texto' : 'Qual destes é seu time do coração?',
+      'respostas' : [
+        {'texto': 'Boafogo', 'nota': '10'}, 
+        {'texto': 'Fluminense', 'nota': '-20'},
+        {'texto': 'Vasco', 'nota': '-20'},
+        {'texto': 'Flamengo', 'nota': '-20'},
+      ],
     }
   ];
 
