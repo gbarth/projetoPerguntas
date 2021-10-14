@@ -8,6 +8,7 @@ main(){
 
 class _PerguntaAppState extends State<PerguntaApp>{
   var _perguntaSelecionada = 0;
+  var _notaTotal = 0;
   final _perguntas = const [
     {
       'texto' : 'Qual destas cores é sua favorita?',
@@ -31,19 +32,27 @@ class _PerguntaAppState extends State<PerguntaApp>{
       'texto' : 'Qual destes é seu time do coração?',
       'respostas' : [
         {'texto': 'Boafogo', 'nota': '10'}, 
-        {'texto': 'Fluminense', 'nota': '-20'},
-        {'texto': 'Vasco', 'nota': '-20'},
+        {'texto': 'Fluminense', 'nota': '-10'},
+        {'texto': 'Vasco', 'nota': '-10'},
         {'texto': 'Flamengo', 'nota': '-20'},
       ],
     }
   ];
 
-  void _responder(){
+  void _responder(int nota){
     if(temPerguntaSelecionada){
       setState(() {
       _perguntaSelecionada++;
+      _notaTotal += nota;
       });
     }
+  }
+
+  void _reiniciarQuestionario(){
+    setState(() {
+      _perguntaSelecionada = 0;
+      _notaTotal = 0;
+    });
   }
 
   bool get temPerguntaSelecionada{
@@ -65,7 +74,7 @@ class _PerguntaAppState extends State<PerguntaApp>{
           ),
           body: temPerguntaSelecionada 
           ? Questionario(perguntas: _perguntas, perguntaSelecionada: _perguntaSelecionada, responder: _responder)
-          : Resultado('Parabéns'),
+          : Resultado(_notaTotal, _reiniciarQuestionario),
       ),
     );
   }
