@@ -31,7 +31,7 @@ class _PerguntaAppState extends State<PerguntaApp>{
     {
       'texto' : 'Qual destes é seu time do coração?',
       'respostas' : [
-        {'texto': 'Boafogo', 'nota': '10'}, 
+        {'texto': 'Botafogo', 'nota': '10'}, 
         {'texto': 'Fluminense', 'nota': '-10'},
         {'texto': 'Vasco', 'nota': '-10'},
         {'texto': 'Flamengo', 'nota': '-20'},
